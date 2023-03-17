@@ -6,6 +6,7 @@ class BikeRental:
         Our constructor class that instantiates bike rental shop.
         """        
         self.stock = stock 
+
     def displaystock(self):
         """
         Displays the bikes currently available for rent in the shop.
@@ -147,26 +148,22 @@ class Customer:
             return self.rentalTime, self.rentalBasis, self.bikes  
         else:
             return 0,0,0
-    
 
+bike_shop = BikeRental(10)
+customer = Customer()
+# Display the stock available in the bike shop
 
+bike_shop.displaystock()
+# Request a bike from the customer
 
+customer.requestBike()
+# Rent a bike on hourly basis
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+customer.rentalTime = bike_shop.rentBikeOnHourlyBasis(customer.bikes)
+# Rent a bike on daily basis
+customer.rentalTime = bike_shop.rentBikeOnDailyBasis(customer.bikes)
+# Rent a bike on weekly basis
+customer.rentalTime = bike_shop.rentBikeOnWeeklyBasis(customer.bikes)
+# Return the bike to the rental shop and calculate the bill
+
+bike_shop.returnBike(customer.returnBike())
